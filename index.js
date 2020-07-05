@@ -6,10 +6,12 @@ client.once("ready", () => {
 	console.log("Ready!");
 });
 
-client.on('message', message => {
-	if (message.content === '!Hello') {
-        // send back "Pong." to the channel the message was sent in
-        message.channel.send('hello to you too.');
+client.on("message", message => {
+	var chan = client.channels.cache.get(message.channel.id);
+	var msg = message.toString();
+	
+	if (msg.charAt(1) == '&') {
+		chan.send("oui");
 	}
 });
 
