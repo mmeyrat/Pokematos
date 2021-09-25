@@ -9,7 +9,7 @@ module.exports = {
 
         if (!fs.existsSync(playerFile)) {
             var playerPkmn = { team: [], pc: [] };
-		    var json = JSON.stringify(playerPkmn);
+		    var json = JSON.stringify(playerPkmn, null, "\t");
 	        fs.writeFileSync(playerFile, json);
         }
 
@@ -41,7 +41,7 @@ module.exports = {
             if (Number(args[1]) > 0 && Number(args[1]) < 101 && lp != 0) {
                 if (playerPkmn.team.length < 6) {	
                     playerPkmn.team.push({ name: args[0], level: Number(args[1]), maxlp: lp, currentlp: lp });
-                    var json = JSON.stringify(playerPkmn);
+                    var json = JSON.stringify(playerPkmn, null, "\t");
                     fs.writeFileSync(playerFile, json);
                     var embed = new Discord.MessageEmbed()
                         .setColor("#626BAE")
@@ -50,7 +50,7 @@ module.exports = {
                 }
                 else {
                     playerPkmn.pc.push({ name: args[0], level: Number(args[1]), maxlp: lp, currentlp: lp });
-                    var json = JSON.stringify(playerPkmn);
+                    var json = JSON.stringify(playerPkmn, null, "\t");
                     fs.writeFileSync(playerFile, json);
                     var embed = new Discord.MessageEmbed()
                         .setColor("#626BAE")

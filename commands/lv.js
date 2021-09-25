@@ -11,7 +11,7 @@ module.exports = {
 
         if (Number(playerPkmn.team[0].level) + Number(args[0]) < 100) {
             playerPkmn.team[0].level = Number(playerPkmn.team[0].level) + Number(args[0]);
-            var json = JSON.stringify(playerPkmn);
+            var json = JSON.stringify(playerPkmn, null, "\t");
             fs.writeFileSync(playerFile, json);
 
             var embed = new Discord.MessageEmbed()

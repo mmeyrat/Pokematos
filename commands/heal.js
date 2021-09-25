@@ -21,7 +21,7 @@ module.exports = {
         }
 
         playerPkmn.team[0].currentlp = lp;
-        var json = JSON.stringify(playerPkmn);
+        var json = JSON.stringify(playerPkmn, null, "\t");
         fs.writeFileSync(playerFile, json);
         var embed = new Discord.MessageEmbed()
             .setColor("#626BAE")

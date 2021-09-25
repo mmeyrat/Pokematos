@@ -19,7 +19,7 @@ module.exports = {
         if (index !== -1) {
             playerPkmn.pc.push(playerPkmn.team[index]);
             playerPkmn.team.splice(index, 1);
-            var json = JSON.stringify(playerPkmn);
+            var json = JSON.stringify(playerPkmn, null, "\t");
             fs.writeFileSync(playerFile, json);
             var embed = new Discord.MessageEmbed()
                 .setColor("#626BAE")

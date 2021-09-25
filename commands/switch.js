@@ -13,7 +13,7 @@ module.exports = {
         playerPkmn.team[args[0] - 1] = playerPkmn.team[args[1] - 1];
         playerPkmn.team[args[1] - 1] = tmp;
 
-        var json = JSON.stringify(playerPkmn);
+        var json = JSON.stringify(playerPkmn, null, "\t");
 	    fs.writeFileSync(playerFile, json);
 
         var embed = new Discord.MessageEmbed()
