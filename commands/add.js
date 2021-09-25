@@ -1,6 +1,6 @@
 module.exports = {
     name: "add",
-    description: "Ajoute un pokémon",
+    description: "Ajoute un pokémon.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");
@@ -14,8 +14,9 @@ module.exports = {
         }
 
         var lp = 0;
+        var name = args[0].toLowerCase();
         var https = require('https');
-        let url = "https://www.pokepedia.fr/api.php?action=query&prop=revisions&titles=" + args[0] + "&rvslots=*&rvprop=content&formatversion=2&format=json";
+        let url = "https://www.pokepedia.fr/api.php?action=query&prop=revisions&titles=" + name + "&rvslots=*&rvprop=content&formatversion=2&format=json";
 
         https.get(url, function(res){
             var body = '';
@@ -40,21 +41,21 @@ module.exports = {
     
             if (Number(args[1]) > 0 && Number(args[1]) < 101 && lp != 0) {
                 if (playerPkmn.team.length < 6) {	
-                    playerPkmn.team.push({ name: args[0], level: Number(args[1]), maxlp: lp, currentlp: lp });
+                    playerPkmn.team.push({ name: name, level: Number(args[1]), maxlp: lp, currentlp: lp });
                     var json = JSON.stringify(playerPkmn, null, "\t");
                     fs.writeFileSync(playerFile, json);
                     var embed = new Discord.MessageEmbed()
                         .setColor("#626BAE")
-                        .setDescription("**" + args[0] + "** a rejoint l'**équipe** de " + player.user.username + " !");
+                        .setDescription("**" + name + "** a rejoint l'**équipe** de " + player.user.username + " !");
                     channel.send(embed);
                 }
                 else {
-                    playerPkmn.pc.push({ name: args[0], level: Number(args[1]), maxlp: lp, currentlp: lp });
+                    playerPkmn.pc.push({ name: name, level: Number(args[1]), maxlp: lp, currentlp: lp });
                     var json = JSON.stringify(playerPkmn, null, "\t");
                     fs.writeFileSync(playerFile, json);
                     var embed = new Discord.MessageEmbed()
                         .setColor("#626BAE")
-                        .setDescription("**" + args[0] + "** a été envoyé au **pc** de " + player.user.username + " !");
+                        .setDescription("**" + name + "** a été envoyé au **pc** de " + player.user.username + " !");
                     channel.send(embed);
                 }
             }

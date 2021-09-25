@@ -1,6 +1,6 @@
 module.exports = {
     name: "hit",
-    description: "Fais perdre des pv à un pokémon",
+    description: "Fais perdre des PVs à un pokémon.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

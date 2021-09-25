@@ -1,6 +1,6 @@
 module.exports = {
     name: "team",
-    description: "Affiche l'équipe",
+    description: "Affiche l'équipe.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

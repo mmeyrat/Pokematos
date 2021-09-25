@@ -1,6 +1,6 @@
 module.exports = {
     name: "send",
-    description: "Envoie un pokémon de l'équipe au pc",
+    description: "Envoie un pokémon de l'équipe au pc.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

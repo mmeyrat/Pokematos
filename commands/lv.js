@@ -1,6 +1,6 @@
 module.exports = {
     name: "lv",
-    description: "Augmente le niveau d'un pokémon",
+    description: "Augmente le niveau d'un pokémon.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

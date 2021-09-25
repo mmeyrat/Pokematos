@@ -1,6 +1,6 @@
 module.exports = {
     name: "roll",
-    description: "Lance un dé",
+    description: "Lance un dé.",
     execute(channel, player, file, args) {        
         const Discord = require("discord.js");
         var random = Math.floor(Math.random() * 6) + 1;

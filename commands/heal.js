@@ -1,6 +1,6 @@
 module.exports = {
     name: "heal",
-    description: "Soigne un pokémon",
+    description: "Soigne un pokémon.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

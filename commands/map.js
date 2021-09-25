@@ -1,6 +1,6 @@
 module.exports = {
     name: "map",
-    description: "Affiche la carte",
+    description: "Affiche la carte.",
     execute(channel, player, file, args) {
         const Discord = require("discord.js");
         var embed = new Discord.MessageEmbed()
