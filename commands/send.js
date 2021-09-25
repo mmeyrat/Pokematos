@@ -5,7 +5,7 @@ module.exports = {
         const Discord = require("discord.js");
         const fs = require("fs");
         
-        if (args[0] == null) return;
+        if (!fs.existsSync(playerFile) || args[0] == null) return;
 
         var playerPkmn = JSON.parse(fs.readFileSync(playerFile, 'utf8'));
         var index = -1;

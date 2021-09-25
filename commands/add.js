@@ -8,6 +8,9 @@ module.exports = {
         if (args[0] == null || args[1] == null) return;
 
         if (!fs.existsSync(playerFile)) {
+            if (!fs.existsSync("players/")) {
+                fs.mkdirSync("players/", { recursive: true })
+            }
             var playerPkmn = { team: [], pc: [] };
 		    var json = JSON.stringify(playerPkmn, null, "\t");
 	        fs.writeFileSync(playerFile, json);

@@ -18,7 +18,7 @@ client.on("ready", () => {
 	setInterval(() => {
 		var id = Math.floor(Math.random() * (activities.length - 1) + 1);
 		client.user.setActivity(activities[id], { type: "LISTENING" });
-	}, 60000);
+	}, 120000);
 });
 
 client.on("message", message => {
@@ -28,16 +28,8 @@ client.on("message", message => {
 	var args = message.content.slice(config.PREFIX.length).split(" ");
 	var command = args.shift().toLowerCase();
 
-	if (fs.existsSync(playerFile)) {
-		if (client.commands.has(command)) {
-			client.commands.get(command).execute(channel, player, playerFile, args);
-		}
-	} else if (message.author.id != client.user.id) {
-		var embed = new Discord.MessageEmbed()
-            .setColor("#626BAE")
-            .setDescription("Utilisez la commande **&start** pour commencer.");
-        channel.send(embed);
-		return;
+	if (client.commands.has(command)) {
+		client.commands.get(command).execute(channel, player, playerFile, args);
 	}
 });
  
