@@ -11,7 +11,7 @@ module.exports = {
         var index = -1;
         
         for (var i = 0; i < playerPkmn.team.length; i++) {
-            if (playerPkmn.team[i].name == args[0]) {
+            if (playerPkmn.team[i].name == args[0] && playerPkmn.team.length > 1) {
                 index = i;
             }
         }

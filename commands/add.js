@@ -28,12 +28,14 @@ module.exports = {
             });
             res.on('end', function(){
                 var response = JSON.parse(body);
-                var content = response.query.pages[0].revisions[0].slots.main.content.toString();
-                var lpStartId = content.search("PV=");
-                var lpEndId = content.search("attaque=");
-                var baseLp = Number(content.substring(lpStartId + 3, lpEndId - 2));
-                lp = Math.floor(((baseLp * 2 * Number(args[1])) / 100) + Number(args[1]) + 10);
-                loadedData();
+                if (response.query.pages[0].revisions != null) {
+                    var content = response.query.pages[0].revisions[0].slots.main.content.toString();
+                    var lpStartId = content.search("PV=");
+                    var lpEndId = content.search("attaque=");
+                    var baseLp = Number(content.substring(lpStartId + 3, lpEndId - 2));
+                    lp = Math.floor(((baseLp * 2 * Number(args[1])) / 100) + Number(args[1]) + 10);
+                    loadedData();
+                }
             });
         }).on('error', function(e){
               console.log("Got an error: ", e);
