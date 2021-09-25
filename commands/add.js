@@ -1,6 +1,7 @@
 module.exports = {
     name: "add",
-    description: "Ajoute un pokémon.",
+	args: ["nom", "niveau"],
+    description: "Ajoute un Pokémon. Les accents doivent être respectés",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

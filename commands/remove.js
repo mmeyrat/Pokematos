@@ -1,6 +1,7 @@
 module.exports = {
     name: "remove",
-    description: "Supprime un pokémon.",
+	args: ["nom"],
+    description: "Supprime un Pokémon.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

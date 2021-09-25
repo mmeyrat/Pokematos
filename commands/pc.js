@@ -1,6 +1,7 @@
 module.exports = {
     name: "pc",
-    description: "Affiche le pc.",
+	args: [""],
+    description: "Affiche le PC.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");

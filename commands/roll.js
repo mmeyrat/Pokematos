@@ -1,5 +1,6 @@
 module.exports = {
     name: "roll",
+	args: [""],
     description: "Lance un dé 6.",
     execute(channel, player, file, args) {        
         const Discord = require("discord.js");

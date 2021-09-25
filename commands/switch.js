@@ -1,6 +1,7 @@
 module.exports = {
     name: "switch",
-    description: "Echange deux pokémon de l'équipe.",
+	args: ["numéro", "numéro"],
+    description: "Echange deux Pokémon de l'équipe.",
     execute(channel, player, playerFile, args) {
         const Discord = require("discord.js");
         const fs = require("fs");
