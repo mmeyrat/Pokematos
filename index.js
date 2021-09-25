@@ -23,11 +23,17 @@ client.on("message", message => {
 	var args = message.content.slice(config.PREFIX.length).split(" ");
 	var command = args.shift().toLowerCase();
 
-	if (client.commands.has(command)) {
-		client.commands.get(command).execute(channel, player, playerFile, args);
+	if (fs.existsSync(playerFile)) {
+		if (client.commands.has(command)) {
+			client.commands.get(command).execute(channel, player, playerFile, args);
+		}
+	} else if (message.author.id != client.user.id) {
+		var embed = new Discord.MessageEmbed()
+            .setColor("#626BAE")
+            .setDescription("Utilisez la commande **&start** pour commencer.");
+        channel.send(embed);
+		return;
 	}
 });
  
 client.login(config.TOKEN);
-
-
