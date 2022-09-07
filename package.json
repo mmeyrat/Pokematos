@@ -1,7 +1,7 @@
 {
   "name": "pokematos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Un bot de jeu de rôle qui contient un système de gestion de Pokémon pour faciliter vos parties.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
