@@ -1,7 +1,7 @@
 # Pokématos
 
 Pokématos est un prototype de bot Discord, ayant pour but de faciliter les parties de jeu de rôle dans l'univers Pokémon. Il incorpore plusieurs commandes pratiques permettant de gérer vos Pokémon.  
-Il est donc possible d'ajouter des Pokémon à votre équipe ou votre PC. Les Pokémon ajoutés possèdent un niveau et des PVs, qui peuvent être modifiés avec des commandes. Les PVs sont automatiquement calculés à partir de la statistique de base du Pokémon (récupérée depuis [Poképedia](https://www.pokepedia.fr/)). Pour être ajouté, le nom du Pokémon doit donc être correctement orthographié en français.
+Il est donc possible d'ajouter des Pokémon à votre équipe ou votre PC. Les Pokémon ajoutés possèdent un niveau et des PVs, qui peuvent être modifiés avec des commandes. Les PVs sont automatiquement calculés à partir de la statistique de base du Pokémon (récupérée depuis [Poképedia](https://www.pokepedia.fr/)). Pour être ajouté, le nom du Pokémon doit donc être correctement orthographié en français. Si un Pokémon est ajouté alors que l'équipe est complète, il sera automatiquement ajouté au PC.  
 D'autres fonctionnalités facilitant l'utilisation sont également disponibles.  
 
 Ce bot étant un prototype, je n'ai pas l'intention de l'héberger ou de continuer à le développer. 
